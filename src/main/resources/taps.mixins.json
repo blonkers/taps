@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "fun.blonks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "VillagerDeathMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

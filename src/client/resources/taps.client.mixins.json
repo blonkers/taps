@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "fun.blonks.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+      "VillagerDeathClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
