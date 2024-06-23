@@ -20,9 +20,6 @@
 		],
 		"client": [
 			"fun.blonks.TapsClient"
-		],
-		"fabric-datagen": [
-			"fun.blonks.TapsDataGenerator"
 		]
 	},
 	"mixins": [
