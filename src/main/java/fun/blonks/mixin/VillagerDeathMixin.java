@@ -1,25 +1,17 @@
 package fun.blonks.mixin;
 
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import fun.blonks.Taps;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.VillagerEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
 import net.minecraft.text.Text;
-import net.minecraft.text.TextContent;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.village.VillagerData;
 import net.minecraft.village.VillagerProfession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -31,13 +23,13 @@ public abstract class VillagerDeathMixin {
 	private void onDeath(DamageSource source, CallbackInfo ci) {
 		VillagerEntity killed = (VillagerEntity)(Object)this;
 
-		var world = killed.getEntityWorld();
+		World world = killed.getEntityWorld();
 		MinecraftServer server = world.getServer();
 
 		// Client-side, do nothing
 		if (world.isClient) return;
 
-		var data = killed.getVillagerData();
+		VillagerData data = killed.getVillagerData();
 
 		// Notify on all deaths, for pizzazz
 		if (server != null) {

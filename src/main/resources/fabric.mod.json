@@ -3,39 +3,29 @@
 	"id": "taps",
 	"version": "${version}",
 	"name": "Taps",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Notify all players upon the death of villager. Play Taps on the death of your favorite villagers (those with which you've traded).",
 	"authors": [
-		"Me!"
+		"blonkers"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/blonkers/taps",
+		"sources": "https://github.com/blonkers/taps"
 	},
-	"license": "CC0-1.0",
+	"license": "CC-BY-NC-4.0",
 	"icon": "assets/taps/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"fun.blonks.Taps"
-		],
-		"client": [
-			"fun.blonks.TapsClient"
 		]
 	},
 	"mixins": [
-		"taps.mixins.json",
-		{
-			"config": "taps.client.mixins.json",
-			"environment": "client"
-		}
+		"taps.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
