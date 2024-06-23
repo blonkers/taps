@@ -15,3 +15,20 @@ Create a testable jar using:
 ```
 ./gradlew build
 ```
+
+### Tips
+
+#### Spawn a level 2 villager
+
+```
+/summon villager ~ ~1 ~ {VillagerData:{profession:fisherman,level:2,type:snow},PersistenceRequired:1,CustomName:"Harold"}
+```
+
+#### Larger window size
+
+You can make the default Minecraft larger by default on every launch by updating `taps/run/options.txt`:
+
+```
+overrideWidth:1280
+overrideHeight:720
+```
